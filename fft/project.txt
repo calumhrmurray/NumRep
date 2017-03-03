@@ -1,0 +1,7 @@
+Compare line to line
+
+Correlation between line and shifted line, the peak will be at the shift.
+
+When you convolve something it becomes the product of ft in ft space.
+
+Use the convolution to find the shift line.
