@@ -19,7 +19,7 @@ class distribution:
     
     # method to return maximum value of distribution  
     def maximum(self):
-        return 10.0
+        return 1000.0
     
     # method to return random number with distribution
     # choose numpy random exponential or custom code 'calum'    
@@ -53,12 +53,12 @@ class distribution:
     
     # performs an observation by taking n_muons random values
     # of the distribution
-    def observation(self,n_muons=10000):
+    def observation(self,n_muons=10000,method='TNC'):
         results = []
         for i in range(0,n_muons):
             results.append(self.random_val())
         
-        mle_estimates = optimize.minimize(self.nll, [self.f, self.tau1, self.tau2], args=(np.array(results)),method='TNC')
+        mle_estimates = optimize.minimize(self.nll, [self.f, self.tau1, self.tau2], args=(np.array(results)),method=method)
         params = mle_estimates['x']
         # return (parameters_estimates, results)
         return params, np.array(results)
