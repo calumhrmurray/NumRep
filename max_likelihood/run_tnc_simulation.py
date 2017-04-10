@@ -9,10 +9,10 @@ n = input('Enter number of decay particles: ')
 
 results = []
 
-for _ in range(500):
-	results.append(test.observation(method='Nelder-mead',n_muons=int(n))[0])
+for _ in range(1000):
+	results.append(test.observation(n_meas=int(n))[0])
 
 print('Finished TNC simulations')
 
-np.save('/home/calum/Documents/NumRep/max_likelihood/5run'+str(n)+'.npy',results)
+np.save('/home/calum/Documents/NumRep/max_likelihood/fin_run'+str(n)+'.npy',results)
 
